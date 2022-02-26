@@ -13,6 +13,9 @@
 		FC38D37F27CA815100B10A9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC38D37D27CA815100B10A9B /* Main.storyboard */; };
 		FC38D38127CA815200B10A9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC38D38027CA815200B10A9B /* Assets.xcassets */; };
 		FC38D38427CA815200B10A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC38D38227CA815200B10A9B /* LaunchScreen.storyboard */; };
+		FC38D39227CA83AB00B10A9B /* StationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D39127CA83AB00B10A9B /* StationsListViewController.swift */; };
+		FC38D39527CA862100B10A9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D39427CA862100B10A9B /* NetworkManager.swift */; };
+		FC38D39727CA885100B10A9B /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D39627CA885100B10A9B /* Stations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		FC38D38027CA815200B10A9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC38D38327CA815200B10A9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC38D38527CA815200B10A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC38D39127CA83AB00B10A9B /* StationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsListViewController.swift; sourceTree = "<group>"; };
+		FC38D39427CA862100B10A9B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FC38D39627CA885100B10A9B /* Stations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,74 @@
 		FC38D37627CA815100B10A9B /* TransportMap */ = {
 			isa = PBXGroup;
 			children = (
-				FC38D37727CA815100B10A9B /* AppDelegate.swift */,
-				FC38D37927CA815100B10A9B /* SceneDelegate.swift */,
-				FC38D37B27CA815100B10A9B /* ViewController.swift */,
-				FC38D37D27CA815100B10A9B /* Main.storyboard */,
-				FC38D38027CA815200B10A9B /* Assets.xcassets */,
-				FC38D38227CA815200B10A9B /* LaunchScreen.storyboard */,
-				FC38D38527CA815200B10A9B /* Info.plist */,
+				FC38D38B27CA81AE00B10A9B /* SupportingFiles */,
+				FC38D38C27CA81CF00B10A9B /* Storyboards */,
+				FC38D39327CA85FE00B10A9B /* Services */,
+				FC38D38F27CA821900B10A9B /* Models */,
+				FC38D38E27CA81FC00B10A9B /* Views */,
+				FC38D39027CA824100B10A9B /* ViewModels */,
+				FC38D38D27CA81EE00B10A9B /* Resources */,
 			);
 			path = TransportMap;
+			sourceTree = "<group>";
+		};
+		FC38D38B27CA81AE00B10A9B /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D37727CA815100B10A9B /* AppDelegate.swift */,
+				FC38D37927CA815100B10A9B /* SceneDelegate.swift */,
+				FC38D38527CA815200B10A9B /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FC38D38C27CA81CF00B10A9B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D37D27CA815100B10A9B /* Main.storyboard */,
+				FC38D38227CA815200B10A9B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FC38D38D27CA81EE00B10A9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D38027CA815200B10A9B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FC38D38E27CA81FC00B10A9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D37B27CA815100B10A9B /* ViewController.swift */,
+				FC38D39127CA83AB00B10A9B /* StationsListViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC38D38F27CA821900B10A9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D39627CA885100B10A9B /* Stations.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC38D39027CA824100B10A9B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FC38D39327CA85FE00B10A9B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D39427CA862100B10A9B /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +205,10 @@
 			files = (
 				FC38D37C27CA815100B10A9B /* ViewController.swift in Sources */,
 				FC38D37827CA815100B10A9B /* AppDelegate.swift in Sources */,
+				FC38D39527CA862100B10A9B /* NetworkManager.swift in Sources */,
 				FC38D37A27CA815100B10A9B /* SceneDelegate.swift in Sources */,
+				FC38D39727CA885100B10A9B /* Stations.swift in Sources */,
+				FC38D39227CA83AB00B10A9B /* StationsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4ARG8W2BQX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TransportMap/Info.plist;
+				INFOPLIST_FILE = TransportMap/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,7 +388,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4ARG8W2BQX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TransportMap/Info.plist;
+				INFOPLIST_FILE = TransportMap/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
