@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D009ECEEB3C8617F59C58731 /* Pods_TransportMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6E1C64014D1B2353D43606 /* Pods_TransportMap.framework */; };
 		FC38D37827CA815100B10A9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D37727CA815100B10A9B /* AppDelegate.swift */; };
 		FC38D37A27CA815100B10A9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D37927CA815100B10A9B /* SceneDelegate.swift */; };
 		FC38D37C27CA815100B10A9B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D37B27CA815100B10A9B /* MapViewController.swift */; };
@@ -27,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F6E1C64014D1B2353D43606 /* Pods_TransportMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransportMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADD9BD91B7A22E63F3309645 /* Pods-TransportMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportMap.release.xcconfig"; path = "Target Support Files/Pods-TransportMap/Pods-TransportMap.release.xcconfig"; sourceTree = "<group>"; };
+		F9EB34A9EBC90C5858B7E924 /* Pods-TransportMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportMap.debug.xcconfig"; path = "Target Support Files/Pods-TransportMap/Pods-TransportMap.debug.xcconfig"; sourceTree = "<group>"; };
 		FC38D37427CA815100B10A9B /* TransportMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransportMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC38D37727CA815100B10A9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC38D37927CA815100B10A9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,17 +57,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D009ECEEB3C8617F59C58731 /* Pods_TransportMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3683C6ACFA50F014218EB522 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9EB34A9EBC90C5858B7E924 /* Pods-TransportMap.debug.xcconfig */,
+				ADD9BD91B7A22E63F3309645 /* Pods-TransportMap.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C70B266AB9E7A9FA2ABAC78B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F6E1C64014D1B2353D43606 /* Pods_TransportMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC38D36B27CA815100B10A9B = {
 			isa = PBXGroup;
 			children = (
 				FC38D37627CA815100B10A9B /* TransportMap */,
 				FC38D37527CA815100B10A9B /* Products */,
+				3683C6ACFA50F014218EB522 /* Pods */,
+				C70B266AB9E7A9FA2ABAC78B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC38D38827CA815200B10A9B /* Build configuration list for PBXNativeTarget "TransportMap" */;
 			buildPhases = (
+				B48F3A6C74C47B330342C8F4 /* [CP] Check Pods Manifest.lock */,
 				FC38D37027CA815100B10A9B /* Sources */,
 				FC38D37127CA815100B10A9B /* Frameworks */,
 				FC38D37227CA815100B10A9B /* Resources */,
+				36E7A087D9BA0EAB9DF9A33E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,6 +256,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36E7A087D9BA0EAB9DF9A33E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransportMap/Pods-TransportMap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransportMap/Pods-TransportMap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TransportMap/Pods-TransportMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B48F3A6C74C47B330342C8F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransportMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC38D37027CA815100B10A9B /* Sources */ = {
@@ -392,6 +461,7 @@
 		};
 		FC38D38927CA815200B10A9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9EB34A9EBC90C5858B7E924 /* Pods-TransportMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -421,6 +491,7 @@
 		};
 		FC38D38A27CA815200B10A9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADD9BD91B7A22E63F3309645 /* Pods-TransportMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

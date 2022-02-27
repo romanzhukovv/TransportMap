@@ -1,0 +1,6 @@
+framework module Pods_TransportMap {
+  umbrella header "Pods-TransportMap-umbrella.h"
+
+  export *
+  module * { export * }
+}
