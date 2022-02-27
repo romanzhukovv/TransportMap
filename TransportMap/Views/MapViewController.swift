@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import FloatingPanel
 
 class MapViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
@@ -16,11 +17,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlaceMark()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        showBottomSheet()
+        setupFloatingPanel()
     }
     
     private func setupPlaceMark() {
@@ -37,15 +34,15 @@ class MapViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotation(annotation)
     }
-    
-    func showBottomSheet() {
-        guard let bottomVC = storyboard?.instantiateViewController(withIdentifier: "bottomSheet") as? BottomSheetViewController else { return }
-        if let sheet = bottomVC.sheetPresentationController {
-            sheet.detents = [.medium()]
-            sheet.prefersGrabberVisible = true
-            sheet.largestUndimmedDetentIdentifier = .medium
-        }
-        present(bottomVC, animated: true)
-    }
 }
 
+extension MapViewController: FloatingPanelControllerDelegate {
+    func setupFloatingPanel() {
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        guard let bottomVC = storyboard?.instantiateViewController(withIdentifier: "fpController") as? BottomSheetViewController else { return }
+        
+        fpc.set(contentViewController: bottomVC)
+        fpc.addPanel(toParent: self)
+    }
+}
