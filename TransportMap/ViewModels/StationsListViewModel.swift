@@ -11,6 +11,8 @@ class StationsListViewModel: StationsListViewModelProtocol {
     
     var stations: Stations?
     
+    private var selectedIndexPath: IndexPath?
+    
     func numberOfRows() -> Int {
         stations?.data.count ?? 0
     }
@@ -32,4 +34,13 @@ class StationsListViewModel: StationsListViewModelProtocol {
         }
     }
     
+    func viewModelForSelectedRow() -> MapViewModelProtocol? {
+        guard let selectedIndexPath = selectedIndexPath else { return nil }
+        guard let station = stations?.data[selectedIndexPath.row] else { return nil }
+        return MapViewModel(station: station)
+    }
+    
+    func selectRow(at indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+    }
 }

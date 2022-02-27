@@ -12,4 +12,6 @@ protocol StationsListViewModelProtocol {
     func getData(completion: @escaping() -> Void)
     
     func cellViewModel(for indexPath: IndexPath) -> StationViewCellViewModelProtocol?
+    func viewModelForSelectedRow() -> MapViewModelProtocol?
+    func selectRow(at indexPath: IndexPath)
 }

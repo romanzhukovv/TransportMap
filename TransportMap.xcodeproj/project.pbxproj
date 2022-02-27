@@ -21,6 +21,9 @@
 		FC38D39E27CBB87B00B10A9B /* StationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D39D27CBB87B00B10A9B /* StationViewCell.swift */; };
 		FC38D3A027CBB97900B10A9B /* StationViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D39F27CBB97900B10A9B /* StationViewCellViewModel.swift */; };
 		FC38D3A227CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D3A127CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift */; };
+		FC5E936127CC1215000C2633 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936027CC1215000C2633 /* MapViewModel.swift */; };
+		FC5E936327CC1231000C2633 /* MapViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936227CC1231000C2633 /* MapViewModelProtocol.swift */; };
+		FC5E936727CC2E69000C2633 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936627CC2E69000C2633 /* BottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		FC38D39D27CBB87B00B10A9B /* StationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewCell.swift; sourceTree = "<group>"; };
 		FC38D39F27CBB97900B10A9B /* StationViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewCellViewModel.swift; sourceTree = "<group>"; };
 		FC38D3A127CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		FC5E936027CC1215000C2633 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		FC5E936227CC1231000C2633 /* MapViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelProtocol.swift; sourceTree = "<group>"; };
+		FC5E936627CC2E69000C2633 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				FC38D37B27CA815100B10A9B /* MapViewController.swift */,
+				FC5E936627CC2E69000C2633 /* BottomSheetViewController.swift */,
 				FC38D39127CA83AB00B10A9B /* StationsListViewController.swift */,
 				FC38D39D27CBB87B00B10A9B /* StationViewCell.swift */,
 			);
@@ -133,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				FC38D39827CB7AAF00B10A9B /* StationsListViewModel.swift */,
+				FC5E936027CC1215000C2633 /* MapViewModel.swift */,
 				FC38D39F27CBB97900B10A9B /* StationViewCellViewModel.swift */,
 			);
 			path = ViewModels;
@@ -151,6 +159,7 @@
 			children = (
 				FC38D39B27CB7B8B00B10A9B /* StationsListViewModelProtocol.swift */,
 				FC38D3A127CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift */,
+				FC5E936227CC1231000C2633 /* MapViewModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -236,7 +245,10 @@
 				FC38D39C27CB7B8B00B10A9B /* StationsListViewModelProtocol.swift in Sources */,
 				FC38D39E27CBB87B00B10A9B /* StationViewCell.swift in Sources */,
 				FC38D39727CA885100B10A9B /* Stations.swift in Sources */,
+				FC5E936327CC1231000C2633 /* MapViewModelProtocol.swift in Sources */,
 				FC38D39227CA83AB00B10A9B /* StationsListViewController.swift in Sources */,
+				FC5E936727CC2E69000C2633 /* BottomSheetViewController.swift in Sources */,
+				FC5E936127CC1215000C2633 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

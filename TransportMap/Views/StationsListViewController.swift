@@ -35,6 +35,7 @@ class StationsListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        stationsListViewModel.selectRow(at: indexPath)
         
         performSegue(withIdentifier: "showMap", sender: nil)
     }
@@ -42,7 +43,8 @@ class StationsListViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        let mapVC = segue.destination as! MapViewController
+        mapVC.mapViewModel = stationsListViewModel.viewModelForSelectedRow()
     }
 }
 

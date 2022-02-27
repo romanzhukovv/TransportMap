@@ -77,10 +77,37 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o4A-ac-Kke"/>
+                    <connections>
+                        <outlet property="mapView" destination="hL1-OZ-he0" id="ZK3-4l-NlQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvl-Td-Ph7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1658" y="165"/>
+        </scene>
+        <!--Bottom Sheet View Controller-->
+        <scene sceneID="k3F-wT-Zbx">
+            <objects>
+                <viewController storyboardIdentifier="bottomSheet" id="31p-hV-Vbh" customClass="BottomSheetViewController" customModule="TransportMap" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ubu-xQ-vGz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfV-aa-qNO">
+                                <rect key="frame" x="139" y="40" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zq5-pT-IX4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCc-xq-Jm5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="raC-zM-omO">
