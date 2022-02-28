@@ -20,6 +20,9 @@ class MapViewController: UIViewController {
         setupFloatingPanel()
     }
     
+    @IBAction func closeMapButton() {
+        dismiss(animated: true)
+    }
     private func setupPlaceMark() {
         guard let latitude = mapViewModel?.latitude,
               let longitude = mapViewModel?.longitude else { return }
@@ -40,9 +43,9 @@ extension MapViewController: FloatingPanelControllerDelegate {
     func setupFloatingPanel() {
         let fpc = FloatingPanelController()
         fpc.delegate = self
-        guard let bottomVC = storyboard?.instantiateViewController(withIdentifier: "fpController") as? BottomSheetViewController else { return }
-        
-        fpc.set(contentViewController: bottomVC)
+        guard let routesVC = storyboard?.instantiateViewController(withIdentifier: "fpController") as? RoutesListViewController else { return }
+        routesVC.routesListViewModel = mapViewModel?.viewModelForRoutesList()
+        fpc.set(contentViewController: routesVC)
         fpc.addPanel(toParent: self)
     }
 }

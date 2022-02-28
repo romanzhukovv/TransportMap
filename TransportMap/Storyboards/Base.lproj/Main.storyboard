@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,12 +67,30 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hL1-OZ-he0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDL-Jf-mky">
+                                <rect key="frame" x="16" y="16" width="47" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="PEY-C0-yRP"/>
+                                    <constraint firstAttribute="height" constant="31" id="eKp-k2-xoO"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="arrowshape.turn.up.backward.fill" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeMapButton" destination="HYt-gU-cuv" eventType="touchUpInside" id="jA8-eC-T2D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3yg-Yd-W2C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tDL-Jf-mky" firstAttribute="top" secondItem="3yg-Yd-W2C" secondAttribute="top" constant="16" id="Jz9-rb-zJJ"/>
                             <constraint firstItem="hL1-OZ-he0" firstAttribute="leading" secondItem="3yg-Yd-W2C" secondAttribute="leading" id="KtK-aS-UWb"/>
                             <constraint firstItem="3yg-Yd-W2C" firstAttribute="trailing" secondItem="hL1-OZ-he0" secondAttribute="trailing" id="WrL-BV-123"/>
+                            <constraint firstItem="tDL-Jf-mky" firstAttribute="leading" secondItem="RRy-v5-GK2" secondAttribute="leading" constant="16" id="bG1-F4-PcZ"/>
+                            <constraint firstItem="3yg-Yd-W2C" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tDL-Jf-mky" secondAttribute="trailing" symbolic="YES" id="fVf-fk-sBl"/>
                             <constraint firstItem="hL1-OZ-he0" firstAttribute="top" secondItem="3yg-Yd-W2C" secondAttribute="top" id="pti-Iv-H9W"/>
                             <constraint firstItem="3yg-Yd-W2C" firstAttribute="bottom" secondItem="hL1-OZ-he0" secondAttribute="bottom" id="ujq-tc-HbG"/>
                         </constraints>
@@ -85,29 +104,72 @@
             </objects>
             <point key="canvasLocation" x="1658" y="165"/>
         </scene>
-        <!--Bottom Sheet View Controller-->
-        <scene sceneID="k3F-wT-Zbx">
+        <!--Routes List View Controller-->
+        <scene sceneID="7q4-Rb-Tmg">
             <objects>
-                <viewController storyboardIdentifier="fpController" id="31p-hV-Vbh" customClass="BottomSheetViewController" customModule="TransportMap" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ubu-xQ-vGz">
+                <viewController storyboardIdentifier="fpController" id="82j-yE-kN8" customClass="RoutesListViewController" customModule="TransportMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PxM-e4-pAv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfV-aa-qNO">
-                                <rect key="frame" x="139" y="40" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qh-T8-kPc">
+                                <rect key="frame" x="0.0" y="20" width="320" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yWN-El-f7h">
+                                <rect key="frame" x="0.0" y="60.5" width="320" height="207.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeCell" textLabel="ez8-YS-rpM" imageView="E8c-8q-aPW" style="IBUITableViewCellStyleDefault" id="HQs-zX-Dq2">
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HQs-zX-Dq2" id="xGk-W2-eoQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ez8-YS-rpM">
+                                                    <rect key="frame" x="52.5" y="0.0" width="251.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="bus.fill" catalog="system" id="E8c-8q-aPW">
+                                                    <rect key="frame" x="15" y="10.5" width="22.5" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="82j-yE-kN8" id="XSa-IQ-OTs"/>
+                                    <outlet property="delegate" destination="82j-yE-kN8" id="F4J-DM-Eqz"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Zq5-pT-IX4"/>
+                        <viewLayoutGuide key="safeArea" id="I60-Dj-zyF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yWN-El-f7h" firstAttribute="leading" secondItem="I60-Dj-zyF" secondAttribute="leading" id="DQ4-6N-TTw"/>
+                            <constraint firstItem="I60-Dj-zyF" firstAttribute="bottom" secondItem="yWN-El-f7h" secondAttribute="bottom" constant="300" id="HiL-HJ-MKx"/>
+                            <constraint firstItem="I60-Dj-zyF" firstAttribute="trailing" secondItem="yWN-El-f7h" secondAttribute="trailing" id="UXs-hS-inu"/>
+                            <constraint firstItem="5Qh-T8-kPc" firstAttribute="leading" secondItem="I60-Dj-zyF" secondAttribute="leading" id="YDM-VW-xZg"/>
+                            <constraint firstItem="5Qh-T8-kPc" firstAttribute="top" secondItem="I60-Dj-zyF" secondAttribute="top" constant="20" id="Z3C-OL-Cyv"/>
+                            <constraint firstItem="I60-Dj-zyF" firstAttribute="trailing" secondItem="5Qh-T8-kPc" secondAttribute="trailing" id="gp0-dN-GWT"/>
+                            <constraint firstItem="yWN-El-f7h" firstAttribute="top" secondItem="5Qh-T8-kPc" secondAttribute="bottom" constant="20" id="hUE-BN-LlZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameStationLabel" destination="5Qh-T8-kPc" id="Gut-W8-IGA"/>
+                        <outlet property="routesTableView" destination="yWN-El-f7h" id="Tjl-el-J1p"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tCc-xq-Jm5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GfE-W5-ehA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="165"/>
+            <point key="canvasLocation" x="2794" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="raC-zM-omO">
@@ -127,6 +189,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="bus.fill" catalog="system" width="128" height="122"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

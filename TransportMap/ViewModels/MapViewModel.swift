@@ -26,4 +26,8 @@ class MapViewModel: MapViewModelProtocol {
     init(station: Station) {
         self.station = station
     }
+    
+    func viewModelForRoutesList() -> RoutesListViewModelProtocol? {
+        RoutesListViewModel(station: station)
+    }
 }

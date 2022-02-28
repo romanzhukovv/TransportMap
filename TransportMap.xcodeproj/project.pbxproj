@@ -24,7 +24,10 @@
 		FC38D3A227CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D3A127CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift */; };
 		FC5E936127CC1215000C2633 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936027CC1215000C2633 /* MapViewModel.swift */; };
 		FC5E936327CC1231000C2633 /* MapViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936227CC1231000C2633 /* MapViewModelProtocol.swift */; };
-		FC5E936727CC2E69000C2633 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936627CC2E69000C2633 /* BottomSheetViewController.swift */; };
+		FC5E936927CC4095000C2633 /* RoutesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936827CC4095000C2633 /* RoutesListViewController.swift */; };
+		FC5E936B27CC47E7000C2633 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936A27CC47E7000C2633 /* StationData.swift */; };
+		FC5E936D27CC4C32000C2633 /* RoutesListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936C27CC4C32000C2633 /* RoutesListViewModelProtocol.swift */; };
+		FC5E936F27CC4C87000C2633 /* RoutesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E936E27CC4C87000C2633 /* RoutesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +52,10 @@
 		FC38D3A127CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		FC5E936027CC1215000C2633 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		FC5E936227CC1231000C2633 /* MapViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelProtocol.swift; sourceTree = "<group>"; };
-		FC5E936627CC2E69000C2633 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		FC5E936827CC4095000C2633 /* RoutesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesListViewController.swift; sourceTree = "<group>"; };
+		FC5E936A27CC47E7000C2633 /* StationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationData.swift; sourceTree = "<group>"; };
+		FC5E936C27CC4C32000C2633 /* RoutesListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesListViewModelProtocol.swift; sourceTree = "<group>"; };
+		FC5E936E27CC4C87000C2633 /* RoutesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +76,6 @@
 				F9EB34A9EBC90C5858B7E924 /* Pods-TransportMap.debug.xcconfig */,
 				ADD9BD91B7A22E63F3309645 /* Pods-TransportMap.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				FC38D37B27CA815100B10A9B /* MapViewController.swift */,
-				FC5E936627CC2E69000C2633 /* BottomSheetViewController.swift */,
+				FC5E936827CC4095000C2633 /* RoutesListViewController.swift */,
 				FC38D39127CA83AB00B10A9B /* StationsListViewController.swift */,
 				FC38D39D27CBB87B00B10A9B /* StationViewCell.swift */,
 			);
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FC38D39627CA885100B10A9B /* Stations.swift */,
+				FC5E936A27CC47E7000C2633 /* StationData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FC38D39827CB7AAF00B10A9B /* StationsListViewModel.swift */,
+				FC5E936E27CC4C87000C2633 /* RoutesListViewModel.swift */,
 				FC5E936027CC1215000C2633 /* MapViewModel.swift */,
 				FC38D39F27CBB97900B10A9B /* StationViewCellViewModel.swift */,
 			);
@@ -183,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				FC38D39B27CB7B8B00B10A9B /* StationsListViewModelProtocol.swift */,
+				FC5E936C27CC4C32000C2633 /* RoutesListViewModelProtocol.swift */,
 				FC38D3A127CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift */,
 				FC5E936227CC1231000C2633 /* MapViewModelProtocol.swift */,
 			);
@@ -305,18 +313,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC38D39927CB7AAF00B10A9B /* StationsListViewModel.swift in Sources */,
+				FC5E936B27CC47E7000C2633 /* StationData.swift in Sources */,
 				FC38D37C27CA815100B10A9B /* MapViewController.swift in Sources */,
 				FC38D37827CA815100B10A9B /* AppDelegate.swift in Sources */,
 				FC38D39527CA862100B10A9B /* NetworkManager.swift in Sources */,
 				FC38D3A027CBB97900B10A9B /* StationViewCellViewModel.swift in Sources */,
 				FC38D3A227CBB9AF00B10A9B /* StationViewCellViewModelProtocol.swift in Sources */,
 				FC38D37A27CA815100B10A9B /* SceneDelegate.swift in Sources */,
+				FC5E936D27CC4C32000C2633 /* RoutesListViewModelProtocol.swift in Sources */,
 				FC38D39C27CB7B8B00B10A9B /* StationsListViewModelProtocol.swift in Sources */,
+				FC5E936927CC4095000C2633 /* RoutesListViewController.swift in Sources */,
 				FC38D39E27CBB87B00B10A9B /* StationViewCell.swift in Sources */,
+				FC5E936F27CC4C87000C2633 /* RoutesListViewModel.swift in Sources */,
 				FC38D39727CA885100B10A9B /* Stations.swift in Sources */,
 				FC5E936327CC1231000C2633 /* MapViewModelProtocol.swift in Sources */,
 				FC38D39227CA83AB00B10A9B /* StationsListViewController.swift in Sources */,
-				FC5E936727CC2E69000C2633 /* BottomSheetViewController.swift in Sources */,
 				FC5E936127CC1215000C2633 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,4 +11,6 @@ protocol MapViewModelProtocol {
     var latitude: Double { get }
     var longitude: Double { get }
     var name: String { get }
+    
+    func viewModelForRoutesList() -> RoutesListViewModelProtocol?
 }

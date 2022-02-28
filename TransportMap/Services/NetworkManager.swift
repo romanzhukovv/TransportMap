@@ -44,6 +44,29 @@ extension NetworkManager {
                 completion(.failure(.decodingError))
             }
         }.resume()
+    }
+    
+    func fetchStationData(stationId: String, completion: @escaping(Result<StationData, NetworkError>) -> Void) {
+        guard let url = URL(string: "\(url)/\(stationId)") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
+                completion(.failure(.noData))
+                return
+            }
             
+            do {
+                let data = try JSONDecoder().decode(StationData.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(data))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
     }
 }
